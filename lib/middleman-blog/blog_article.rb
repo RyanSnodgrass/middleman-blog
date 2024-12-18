@@ -57,7 +57,7 @@ module Middleman
 
         content = super(opts, locs, &block)
 
-        content.sub!(blog_options.summary_separator, '') unless opts[:keep_separator]
+        content = content.split(blog_options.summary_separator).last unless opts[:keep_separator]
 
         content
       end
