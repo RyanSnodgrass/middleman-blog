@@ -9,6 +9,11 @@ Feature: Article summary generation
       """
     And I should not see "Extended part from article with separator."
     When I go to "/2011/01/01/article-with-standard-summary-separator.html"
+    Then I should see:
+      """
+      <!doctype html>
+      <html>
+      """
     Then I should see "Extended part from article with separator."
     And I should not see "READMORE"
     And I should not see "Summary from article with separator."
@@ -19,6 +24,11 @@ Feature: Article summary generation
     Then I should see "<p>Summary from article with no separator.</p>"
     Then I should not see "Extended part from article with no separator."
     When I go to "/2012/06/19/article-with-no-summary-separator.html"
+    Then I should see:
+      """
+      <!doctype html>
+      <html>
+      """
     And I should see "Summary from article with no separator."
     Then I should see "Extended part from article with no separator."
 
